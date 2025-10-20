@@ -1,5 +1,20 @@
 {
     "menu.game": "\uEF00",
     "menu.returnToGame": "Return To SpectraCraft",
-    "menu.disconnect": "Log Off"
-} 
+    "menu.disconnect": "Log Off",
+
+    "trim_material.colorful_trims.rose_quartz": "Rose Quartz Material",
+    "trim_material.colorful_trims.echo_shard": "Echo Shard Material",
+    "trim_material.colorful_trims.glowstone_dust": "Glowstone Dust Material",
+    "trim_material.colorful_trims.nautilus_shell": "Nautilus Shell Material",
+    "trim_material.colorful_trims.prismarine_crystal": "Prismarine Crystals Material",
+    "trim_material.colorful_trims.prismarine_shard": "Prismarine Shards Material",
+    "trim_material.colorful_trims.coal":"Coal Material",
+    "trim_material.colorful_trims.popped_chorus_fruit":"Popped Chorus Fruit Material",
+    "trim_material.colorful_trims.turtle_scute": "Turtle Scute Material",
+    "trim_material.colorful_trims.rose_gold": "Rose Gold Material",
+    "trim_material.colorful_trims.slime_ball":"Slime Ball Material",
+    "trim_material.colorful_trims.netherite_scrap":"Netherite Scrap Material",
+    "trim_material.colorful_trims.ender_pearl":"Ender Pearl Material",
+    "trim_material.colorful_trims.leather":"Leather Material"
+}

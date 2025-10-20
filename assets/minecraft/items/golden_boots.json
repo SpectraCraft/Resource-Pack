@@ -1,0 +1,187 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "cases": [
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/golden_boots_quartz_trim"
+        },
+        "when": "minecraft:quartz"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/golden_boots_iron_trim"
+        },
+        "when": "minecraft:iron"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "colorful_trims:item/golden_boots_glowstone_dust_trim"
+        },
+        "when": "colorful_trims:glowstone_dust"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/golden_boots_netherite_trim"
+        },
+        "when": "minecraft:netherite"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "colorful_trims:item/golden_boots_leather_trim"
+        },
+        "when": "colorful_trims:leather"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "colorful_trims:item/golden_boots_ender_pearl_trim"
+        },
+        "when": "colorful_trims:ender_pearl"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "colorful_trims:item/golden_boots_netherite_scrap_trim"
+        },
+        "when": "colorful_trims:netherite_scrap"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "colorful_trims:item/golden_boots_slime_ball_trim"
+        },
+        "when": "colorful_trims:slime_ball"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "colorful_trims:item/golden_boots_popped_chorus_fruit_trim"
+        },
+        "when": "colorful_trims:popped_chorus_fruit"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "colorful_trims:item/golden_boots_coal_trim"
+        },
+        "when": "colorful_trims:coal"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/golden_boots_redstone_trim"
+        },
+        "when": "minecraft:redstone"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/golden_boots_copper_trim"
+        },
+        "when": "minecraft:copper"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/golden_boots_golden_trim"
+        },
+        "when": "minecraft:gold"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/golden_boots_emerald_trim"
+        },
+        "when": "minecraft:emerald"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/golden_boots_diamond_trim"
+        },
+        "when": "minecraft:diamond"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/golden_boots_lapis_trim"
+        },
+        "when": "minecraft:lapis"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/golden_boots_amethyst_trim"
+        },
+        "when": "minecraft:amethyst"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/golden_boots_resin_trim"
+        },
+        "when": "minecraft:resin"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "colorful_trims:item/golden_boots_rose_quartz_trim"
+        },
+        "when": "colorful_trims:rose_quartz"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "colorful_trims:item/golden_boots_echo_shard_trim"
+        },
+        "when": "colorful_trims:echo_shard"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "colorful_trims:item/golden_boots_prismarine_crystal_trim"
+        },
+        "when": "colorful_trims:prismarine_crystal"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "colorful_trims:item/golden_boots_prismarine_shard_trim"
+        },
+        "when": "colorful_trims:prismarine_shard"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "colorful_trims:item/golden_boots_turtle_scute_trim"
+        },
+        "when": "colorful_trims:turtle_scute"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "colorful_trims:item/golden_boots_nautilus_shell_trim"
+        },
+        "when": "colorful_trims:nautilus_shell"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "colorful_trims:item/golden_boots_rose_golden_trim"
+        },
+        "when": "colorful_trims:rose_gold"
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/golden_boots"
+    },
+    "property": "minecraft:trim_material"
+  }
+}
