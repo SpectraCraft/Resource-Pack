@@ -1,5 +1,4 @@
 #version 330
-
 #moj_import <minecraft:fog.glsl>
 #moj_import <minecraft:dynamictransforms.glsl>
 #moj_import <minecraft:globals.glsl>
@@ -21,51 +20,79 @@ in vec2 texCoord0;
 out vec4 fragColor;
 
 void main() {
-    vec4 color = texture(Sampler0, texCoord0);
+    // --- 1) Exact, unfiltered alpha for classification (mip 0, no bilinear) ---
+    ivec2 sz    = textureSize(Sampler0, 0);
+    ivec2 texel = ivec2(clamp(floor(texCoord0 * vec2(sz)),
+                              vec2(0.0), vec2(sz) - vec2(1.0)));
+    vec4 baseTexExact = texelFetch(Sampler0, texel, 0);
+    int opacity = int(floor(baseTexExact.a * 255.0 + 0.5));  // 0..255
 
+    // --- 2) If NOT 253/254, render normal immediately and return ---
+    if (opacity != 253 && opacity != 254) {
+        // normal pipeline (use filtered sample for regular look)
+        vec4 color = texture(Sampler0, texCoord0);
+
+        #ifdef ALPHA_CUTOUT
+            if (color.a < ALPHA_CUTOUT) discard;
+        #endif
+
+        #ifdef PER_FACE_LIGHTING
+            color *= (gl_FrontFacing ? vertexPerFaceColorFront : vertexPerFaceColorBack) * ColorModulator;
+        #else
+            color *= vertexColor * ColorModulator;
+        #endif
+
+        #ifndef NO_OVERLAY
+            color.rgb = mix(overlayColor.rgb, color.rgb, overlayColor.a);
+        #endif
+
+        #ifndef EMISSIVE
+            color *= lightMapColor;
+        #endif
+
+        fragColor = apply_fog(color, sphericalVertexDistance, cylindricalVertexDistance,
+                              FogEnvironmentalStart, FogEnvironmentalEnd,
+                              FogRenderDistanceStart, FogRenderDistanceEnd, FogColor);
+        return;
+    }
+
+    // --- 3) Glow paths (only for 253/254) ---
+    // Precompute both fogged variants once
+    vec4 filtered = texture(Sampler0, texCoord0);
     #ifdef ALPHA_CUTOUT
-        if (color.a < ALPHA_CUTOUT) {
-            discard;
-        }
+        if (filtered.a < ALPHA_CUTOUT) discard;
     #endif
 
     #ifdef PER_FACE_LIGHTING
-        color *= (gl_FrontFacing ? vertexPerFaceColorFront : vertexPerFaceColorBack) * ColorModulator;
+        filtered *= (gl_FrontFacing ? vertexPerFaceColorFront : vertexPerFaceColorBack) * ColorModulator;
     #else
-        color *= vertexColor * ColorModulator;
+        filtered *= vertexColor * ColorModulator;
     #endif
 
     #ifndef NO_OVERLAY
-        color.rgb = mix(overlayColor.rgb, color.rgb, overlayColor.a);
+        filtered.rgb = mix(overlayColor.rgb, filtered.rgb, overlayColor.a);
     #endif
-    
+
     #ifndef EMISSIVE
-        color *= lightMapColor;
+        filtered *= lightMapColor;
     #endif
 
-    // Aplicar niebla al color base
-        fragColor = apply_fog(color, sphericalVertexDistance, cylindricalVertexDistance, FogEnvironmentalStart, FogEnvironmentalEnd, FogRenderDistanceStart, FogRenderDistanceEnd, FogColor);
+    vec4 normalOut  = apply_fog(filtered,       sphericalVertexDistance, cylindricalVertexDistance,
+                                FogEnvironmentalStart, FogEnvironmentalEnd,
+                                FogRenderDistanceStart, FogRenderDistanceEnd, FogColor);
+    vec4 rawUnderFog = apply_fog(baseTexExact,  sphericalVertexDistance, cylindricalVertexDistance,
+                                 FogEnvironmentalStart, FogEnvironmentalEnd,
+                                 FogRenderDistanceStart, FogRenderDistanceEnd, FogColor);
 
-    // Obtener opacidad 255
-        float opacity = ceil(color.a * 255.0);
-
-    // Efectos
-
-        // Hacer que los píxeles con opacidad de 254 sean brillantes
-            if (opacity == 254) {
-                fragColor = apply_fog(texture(Sampler0, texCoord0), sphericalVertexDistance, cylindricalVertexDistance, FogEnvironmentalStart, FogEnvironmentalEnd, FogRenderDistanceStart, FogRenderDistanceEnd, FogColor);
-            }
-
-        // Si es 253 entonces aplicar pulso
-            if (opacity == 253) {
-
-            // Aplicar el pulso con desfase
-            float animationTime = GameTime * 1000.0;
-            float pulse = 0.5 + 0.5 * sin(animationTime * 2.0);
-
-            // Aplicar el efecto de brillo pulsante
-            vec4 animatedFade = mix(fragColor, texture(Sampler0, texCoord0), pow(pulse, 1));
-            fragColor = animatedFade;
-
-            }
+    if (opacity == 254) {
+        // steady glow
+        fragColor = rawUnderFog;
+        return;
+    } else { // opacity == 253
+        // pulsing glow
+        float t = GameTime * 1000.0;
+        float pulse = 0.5 + 0.5 * sin(t * 2.0);
+        fragColor = mix(normalOut, rawUnderFog, pulse);
+        return;
+    }
 }

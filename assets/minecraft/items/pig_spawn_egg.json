@@ -1,0 +1,68 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/pig_spawn_egg"
+    },
+    "cases": [
+      {
+        "when": "muddy_pig_spawn_egg",
+        "model": {
+          "type": "model",
+          "model": "earth_animals:item/muddy_pig_spawn_egg"
+        }
+      },
+      {
+        "when": "dried_muddy_pig_spawn_egg",
+        "model": {
+          "type": "model",
+          "model": "earth_animals:item/dried_muddy_pig_spawn_egg"
+        }
+      },
+      {
+        "when": "mottled_pig_spawn_egg",
+        "model": {
+          "type": "model",
+          "model": "earth_animals:item/mottled_pig_spawn_egg"
+        }
+      },
+      {
+        "when": "pale_pig_spawn_egg",
+        "model": {
+          "type": "model",
+          "model": "earth_animals:item/pale_pig_spawn_egg"
+        }
+      },
+      {
+        "when": "piebald_pig_spawn_egg",
+        "model": {
+          "type": "model",
+          "model": "earth_animals:item/piebald_pig_spawn_egg"
+        }
+      },
+      {
+        "when": "pink_footed_pig_spawn_egg",
+        "model": {
+          "type": "model",
+          "model": "earth_animals:item/pink_footed_pig_spawn_egg"
+        }
+      },
+      {
+        "when": "sooty_pig_spawn_egg",
+        "model": {
+          "type": "model",
+          "model": "earth_animals:item/sooty_pig_spawn_egg"
+        }
+      },
+      {
+        "when": "spotted_pig_spawn_egg",
+        "model": {
+          "type": "model",
+          "model": "earth_animals:item/spotted_pig_spawn_egg"
+        }
+      }
+    ]
+  }
+}

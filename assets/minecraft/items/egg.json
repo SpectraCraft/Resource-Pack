@@ -1,0 +1,75 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/egg"
+    },
+    "cases": [
+      {
+        "when": "red_egg",
+        "model": {
+          "type": "model",
+          "model": "earth_animals:item/red_egg"
+        }
+      },
+      {
+        "when": "amber_egg",
+        "model": {
+          "type": "model",
+          "model": "earth_animals:item/amber_egg"
+        }
+      },
+      {
+        "when": "bronzed_egg",
+        "model": {
+          "type": "model",
+          "model": "earth_animals:item/bronzed_egg"
+        }
+      },
+      {
+        "when": "gold_egg",
+        "model": {
+          "type": "model",
+          "model": "earth_animals:item/gold_egg"
+        }
+      },
+      {
+        "when": "midnight_egg",
+        "model": {
+          "type": "model",
+          "model": "earth_animals:item/midnight_egg"
+        }
+      },
+      {
+        "when": "skewbald_egg",
+        "model": {
+          "type": "model",
+          "model": "earth_animals:item/skewbald_egg"
+        }
+      },
+      {
+        "when": "stormy_egg",
+        "model": {
+          "type": "model",
+          "model": "earth_animals:item/stormy_egg"
+        }
+      },
+      {
+        "when": "fancy_egg",
+        "model": {
+          "type": "model",
+          "model": "earth_animals:item/fancy_egg"
+        }
+      },
+      {
+        "when": "duck_egg",
+        "model": {
+          "type": "model",
+          "model": "clucking_ducks:item/duck_egg"
+        }
+      }
+    ]
+  }
+}

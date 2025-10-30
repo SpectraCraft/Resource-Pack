@@ -1,0 +1,89 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/cow_spawn_egg"
+    },
+    "cases": [
+      {
+        "when": "moobloom_spawn_egg",
+        "model": {
+          "type": "model",
+          "model": "earth_animals:item/moobloom_spawn_egg"
+        }
+      },
+      {
+        "when": "wooly_cow_spawn_egg",
+        "model": {
+          "type": "model",
+          "model": "earth_animals:item/wooly_cow_spawn_egg"
+        }
+      },
+      {
+        "when": "moolip_spawn_egg",
+        "model": {
+          "type": "model",
+          "model": "earth_animals:item/moolip_spawn_egg"
+        }
+      },
+      {
+        "when": "albino_cow_spawn_egg",
+        "model": {
+          "type": "model",
+          "model": "earth_animals:item/albino_cow_spawn_egg"
+        }
+      },
+      {
+        "when": "ashen_cow_spawn_egg",
+        "model": {
+          "type": "model",
+          "model": "earth_animals:item/ashen_cow_spawn_egg"
+        }
+      },
+      {
+        "when": "cream_cow_spawn_egg",
+        "model": {
+          "type": "model",
+          "model": "earth_animals:item/cream_cow_spawn_egg"
+        }
+      },
+      {
+        "when": "cookie_cow_spawn_egg",
+        "model": {
+          "type": "model",
+          "model": "earth_animals:item/cookie_cow_spawn_egg"
+        }
+      },
+      {
+        "when": "dairy_cow_spawn_egg",
+        "model": {
+          "type": "model",
+          "model": "earth_animals:item/dairy_cow_spawn_egg"
+        }
+      },
+      {
+        "when": "pinto_cow_spawn_egg",
+        "model": {
+          "type": "model",
+          "model": "earth_animals:item/pinto_cow_spawn_egg"
+        }
+      },
+      {
+        "when": "sunset_cow_spawn_egg",
+        "model": {
+          "type": "model",
+          "model": "earth_animals:item/sunset_cow_spawn_egg"
+        }
+      },
+      {
+        "when": "umbra_cow_spawn_egg",
+        "model": {
+          "type": "model",
+          "model": "earth_animals:item/umbra_cow_spawn_egg"
+        }
+      }
+    ]
+  }
+}
