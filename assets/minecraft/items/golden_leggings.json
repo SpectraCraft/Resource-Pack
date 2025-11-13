@@ -89,7 +89,7 @@
       {
         "model": {
           "type": "minecraft:model",
-          "model": "minecraft:item/golden_leggings_golden_trim"
+          "model": "minecraft:item/golden_leggings_gold_trim"
         },
         "when": "minecraft:gold"
       },

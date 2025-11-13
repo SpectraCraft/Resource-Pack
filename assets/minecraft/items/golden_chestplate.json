@@ -89,7 +89,7 @@
       {
         "model": {
           "type": "minecraft:model",
-          "model": "minecraft:item/golden_chestplate_golden_trim"
+          "model": "minecraft:item/golden_chestplate_gold_trim"
         },
         "when": "minecraft:gold"
       },

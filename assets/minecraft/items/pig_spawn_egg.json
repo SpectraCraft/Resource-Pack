@@ -62,6 +62,13 @@
           "type": "model",
           "model": "earth_animals:item/spotted_pig_spawn_egg"
         }
+      },
+      {
+        "when": "dark_spotted_pig_spawn_egg",
+        "model": {
+          "type": "model",
+          "model": "earth_animals:item/dark_spotted_pig_spawn_egg"
+        }
       }
     ]
   }

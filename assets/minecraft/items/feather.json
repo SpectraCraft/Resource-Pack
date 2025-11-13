@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "property": "minecraft:custom_model_data",
+    "cases": [
+      {
+        "when": "fancy_feather",
+        "model": {
+          "type": "minecraft:model",
+          "model": "earth_animals:item/fancy_feather"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/feather"
+    }
+  }
+}

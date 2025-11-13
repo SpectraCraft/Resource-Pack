@@ -89,7 +89,7 @@
       {
         "model": {
           "type": "minecraft:model",
-          "model": "minecraft:item/golden_helmet_golden_trim"
+          "model": "minecraft:item/golden_helmet_gold_trim"
         },
         "when": "minecraft:gold"
       },

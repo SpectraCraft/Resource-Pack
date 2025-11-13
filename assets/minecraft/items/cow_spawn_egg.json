@@ -15,6 +15,13 @@
         }
       },
       {
+        "when": "pink_moobloom_spawn_egg",
+        "model": {
+          "type": "model",
+          "model": "earth_animals:item/pink_moobloom_spawn_egg"
+        }
+      },
+      {
         "when": "wooly_cow_spawn_egg",
         "model": {
           "type": "model",
